@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 200;
+  --saturation: 50%;
+  --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+  --background-color: hsl(var(--hue), var(--saturation), 20%);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.paddle {
+  --position: 50;
+  position: absolute;
+  background-color: var(--foreground-color);
+  top: calc(var(--position) * 1vh);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 1vh;
+  height: 10vh;
+}
+
+.left {
+  left: 1vw;
+}
+
+.right {
+  right: 1vw;
+}
+
+.ball {
+  --x: 50;
+  --y: 50;
+  position: absolute;
+  background-color: var(--foreground-color);
+  border-radius: 50%;
+  left: calc(var(--x) * 1vw);
+  top: calc(var(--y) * 1vh);
+  -webkit-transform: translateY(-50%, -50%);
+          transform: translateY(-50%, -50%);
+  width: 2.5vh;
+  height: 2.5vh;
+}
+
+.score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  font-size: 7vh;
+  color: var(--foreground-color);
+}
+
+.score > * {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+  padding: 0 2vh;
+  margin: 1vh 0;
+  opacity: 0.5;
+}
+
+.score > :first-child {
+  text-align: right;
+  border-right: 0.5vh solid var(--foreground-color);
+}
+/*# sourceMappingURL=styles.css.map */
