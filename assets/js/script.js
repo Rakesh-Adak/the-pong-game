@@ -44,6 +44,10 @@ function handleLose() {
 
 document.addEventListener("mousemove", e => {
     player.position = (e.y / window.innerHeight) * 100;
-})
+});
+
+document.addEventListener("touchmove", e => {
+    player.position = (e.y / window.innerHeight) * 100;
+});
 
 window.requestAnimationFrame(update);
